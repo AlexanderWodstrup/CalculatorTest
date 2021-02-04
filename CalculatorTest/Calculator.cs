@@ -54,7 +54,7 @@ namespace Calculator
             return Accumulator;
         }
 
-        public double Substact(double subtractor)
+        public double Subtract(double subtractor)
         {
             Accumulator -= subtractor;
             return Accumulator;

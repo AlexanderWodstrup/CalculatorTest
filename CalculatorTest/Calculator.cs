@@ -14,18 +14,29 @@ namespace Calculator
 
         public double Subtract(double a, double b)
         {
-
-            return a - b;
+            var result = a - b;
+            Accumulator = result;
+            return result;
         }
 
         public double Multiply(double a, double b)
         {
-            return a * b;
+            var result = a * b;
+            Accumulator = result;
+            return result;
         }
 
         public double Power(double x, double exp)
         {
-            return Math.Pow(x, exp);
+            var result = Math.Pow(x, exp);
+            Accumulator = result;
+            return result;
+        }
+        public double Divide(double dividend, double divisor)
+        {
+            var result = dividend / divisor;
+            Accumulator = result;
+            return result;
         }
 
         public double Accumulator { get; private set; }
@@ -35,10 +46,7 @@ namespace Calculator
             Accumulator = 0;
         }
 
-        public double Divide(double dividend, double divisor)
-        {
-            return dividend;
-        }
+        
 
 
     }

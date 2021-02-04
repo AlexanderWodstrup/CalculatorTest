@@ -43,8 +43,19 @@ namespace Calculator.Test.Unit
         [Test]
         public void AddOverload_addTwoNumber_ThenAddOneNumber_Correctly()
         {
-
+            Assert.That(_uut.Add(12, 50), Is.EqualTo(62));
+            Assert.That(_uut.Add(8),Is.EqualTo(70));
         }
+
+        [Test]
+        public void AddOverload_addTwoNumber_ThenClear_ThenAddOneNumber_Correctly()
+        {
+            Assert.That(_uut.Add(12, 50), Is.EqualTo(62));
+            _uut.Clear();
+            Assert.That(_uut.Add(8), Is.EqualTo(8));
+        }
+
+
 
     }
 }

@@ -16,9 +16,7 @@ namespace Calculator.Test.Unit
         public void Add_TwoNumbers_Correctly()
         {
             //Arrange
-   
             //Act
-            
             //Assert
             Assert.That(_uut.Add(12, 50), Is.EqualTo(62));
         }

@@ -19,18 +19,6 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Add_TwoNumbers_OnePositive_OneNegative_Correctly()
-        {
-            Assert.That(_uut.Add(10, -5), Is.EqualTo(5));
-        }
-
-        [Test]
-        public void Add_TwoNegativeNumbers_Correctly()
-        {
-            Assert.That(_uut.Add(-7, -10), Is.EqualTo(-17));
-        }
-
-        [Test]
         public void Subtract_TwoNumbers_Correctly()
         {
             Assert.That(_uut.Subtract(30,10), Is.EqualTo(20));

@@ -120,6 +120,30 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(10000));
         }
         [Test]
+        public void ClearCheck_after_MultiplyingTwoPositiveNumbers()
+        {
+            _uut.Multiply(2, 10);
+            Assert.That(_uut.Accumulator, Is.EqualTo(20));
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+        [Test]
+        public void ClearCheck_after_AddingTwoNegativeNumbers()
+        {
+            _uut.Add(-12, -15);
+            Assert.That(_uut.Accumulator, Is.EqualTo(-27));
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+        [Test]
+        public void ClearCheck_after_SubstractTwoPositiveNumbers()
+        {
+            _uut.Subtract(2, 10);
+            Assert.That(_uut.Accumulator, Is.EqualTo(-8));
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+        [Test]
         public void AddOverload_addTwoNumber_ThenAddOneNumber_Correctly()
         {
             Assert.That(_uut.Add(12, 50), Is.EqualTo(62));
@@ -132,8 +156,13 @@ namespace Calculator.Test.Unit
             _uut.Clear();
             Assert.That(_uut.Add(8), Is.EqualTo(8));
         }
+        [Test]
+        public void AddOverload_addTwoNumber_ThenAddOneNegativeNumber_Correctly()
+        {
+            Assert.That(_uut.Add(15, 30), Is.EqualTo(45));
+            Assert.That(_uut.Add(5), Is.EqualTo(50));
+        }
 
-        
 
 
     }

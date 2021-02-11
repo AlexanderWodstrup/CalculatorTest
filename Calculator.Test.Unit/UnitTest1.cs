@@ -178,11 +178,14 @@ namespace Calculator.Test.Unit
             _uut.Clear();
             Assert.That(_uut.Subtract(10), Is.EqualTo(-10));
         }
+
         [Test]
         public void SubstractOverload_SubstractTwoNumbers_ThenSubstractOneNegativeNumber_Correctly()
         {
             Assert.That(_uut.Subtract(50, 5), Is.EqualTo(45));
             Assert.That(_uut.Subtract(-10), Is.EqualTo(55));
+        }
+
         [Test]
         public void MultiplyOverload_TwoNumbers_Correctly()
         {
@@ -244,6 +247,6 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Power(-5, -2), Is.EqualTo(0.04));
             Assert.That(_uut.Power(-0.5), Is.EqualTo(5));
-
+        }
     }
 }

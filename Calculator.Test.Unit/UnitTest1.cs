@@ -63,13 +63,32 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Divide(-4, -2), Is.EqualTo(2));
         }
+
+        [Test]
+        public void AccumulatorCheck_after_AddingTwoNumbers()
+        {
+           _uut.Add(10,40);
+           Assert.That(_uut.Accumulator, Is.EqualTo(50));
+        }
+
+        [Test]
+        public void AccumulatorCheck_after_AddingTwoNegativeNumbers()
+        {
+            _uut.Add(-10, -40);
+            Assert.That(_uut.Accumulator, Is.EqualTo(-50));
+        }
+        [Test]
+        public void AccumulatorCheck_after_PowerTwoNumbers()
+        {
+            _uut.Power(10, 4);
+            Assert.That(_uut.Accumulator, Is.EqualTo(10000));
+        }
         [Test]
         public void AddOverload_addTwoNumber_ThenAddOneNumber_Correctly()
         {
             Assert.That(_uut.Add(12, 50), Is.EqualTo(62));
             Assert.That(_uut.Add(8),Is.EqualTo(70));
         }
-
         [Test]
         public void AddOverload_addTwoNumber_ThenClear_ThenAddOneNumber_Correctly()
         {
@@ -78,6 +97,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Add(8), Is.EqualTo(8));
         }
 
+        
 
 
     }

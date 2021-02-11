@@ -163,7 +163,24 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Add(5), Is.EqualTo(50));
         }
 
-
-
+        [Test]
+        public void SubstractOverload_SubstractTwoNumbers_ThenSubstractOneNumber_Correctly()
+        {
+            Assert.That(_uut.Subtract(50,5),Is.EqualTo(45));
+            Assert.That(_uut.Subtract(10),Is.EqualTo(35));
+        }
+        [Test]
+        public void SubstractOverload_SubstractTwoNumbers_ThenClear_ThenSubstractOneNumber_Correctly()
+        {
+            Assert.That(_uut.Subtract(50, 5), Is.EqualTo(45));
+            _uut.Clear();
+            Assert.That(_uut.Subtract(10), Is.EqualTo(-10));
+        }
+        [Test]
+        public void SubstractOverload_SubstractTwoNumbers_ThenSubstractOneNegativeNumber_Correctly()
+        {
+            Assert.That(_uut.Subtract(50, 5), Is.EqualTo(45));
+            Assert.That(_uut.Subtract(-10), Is.EqualTo(55));
+        }
     }
 }

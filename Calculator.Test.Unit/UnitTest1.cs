@@ -37,15 +37,51 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
+        public void Subtract_TwoNegativeNumbers_Correctly()
+        {
+            Assert.That(_uut.Subtract(-30, -10), Is.EqualTo(-20));
+        }
+
+        [Test]
+        public void Subtract_TwoNumbers_OnePositive_OneNegative_Correctly()
+        {
+            Assert.That(_uut.Subtract(-30, 10), Is.EqualTo(-40));
+        }
+
+        [Test]
         public void Multiply_TwoNumbers_Correctly()
         {
             Assert.That(_uut.Multiply(2, 10), Is.EqualTo(20));
         }
 
         [Test]
-        public void PowerCorrectly()
+        public void Multiply_TwoNegativeNumbers_Correctly()
+        {
+            Assert.That(_uut.Multiply(-2, -10), Is.EqualTo(20));
+        }
+
+        [Test]
+        public void Multiply_TwoNumbers_OnePositive_OneNegative_Correctlyy()
+        {
+            Assert.That(_uut.Multiply(-2, 10), Is.EqualTo(-20));
+        }
+
+        [Test]
+        public void Power_Correctly()
         {
             Assert.That(_uut.Power(5, 2), Is.EqualTo(25));
+        }
+
+        [Test]
+        public void Power_NegativeExponent_Correctly()
+        {
+            Assert.That(_uut.Power(5, -2), Is.EqualTo(0.04));
+        }
+
+        [Test]
+        public void Power_NegativeNumber_RaisedByPositivePower_Correctly()
+        {
+            Assert.That(_uut.Power(-5, 2), Is.EqualTo(25));
         }
 
         [Test]

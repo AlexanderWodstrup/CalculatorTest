@@ -32,6 +32,7 @@ namespace Calculator
             Accumulator = result;
             return result;
         }
+
         public double Divide(double dividend, double divisor)
         {
             var result = dividend / divisor;
@@ -45,8 +46,6 @@ namespace Calculator
         {
             Accumulator = 0;
         }
-
-        
 
         public double Add(double addend)
         {

@@ -15,12 +15,19 @@ namespace Calculator.Test.Unit
         [Test]
         public void Add_TwoNumbers_Correctly()
         {
-            //Arrange
-   
-            //Act
-            
-            //Assert
             Assert.That(_uut.Add(12, 50), Is.EqualTo(62));
+        }
+
+        [Test]
+        public void Add_TwoNumbers_OnePositive_OneNegative_Correctly()
+        {
+            Assert.That(_uut.Add(10, -5), Is.EqualTo(5));
+        }
+
+        [Test]
+        public void Add_TwoNegativeNumbers_Correctly()
+        {
+            Assert.That(_uut.Add(-7, -10), Is.EqualTo(-17));
         }
 
         [Test]
@@ -39,6 +46,11 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Power(5, 2), Is.EqualTo(25));
         }
+
+
+
+
+
 
         [Test]
         public void AddOverload_addTwoNumber_ThenAddOneNumber_Correctly()

@@ -178,6 +178,7 @@ namespace Calculator.Test.Unit
             _uut.Clear();
             Assert.That(_uut.Subtract(10), Is.EqualTo(-10));
         }
+
         [Test]
         public void SubstractOverload_SubstractTwoNumbers_ThenSubstractOneNegativeNumber_Correctly()
         {

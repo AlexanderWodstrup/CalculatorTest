@@ -122,6 +122,30 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(10000));
         }
         [Test]
+        public void ClearCheck_after_MultiplyingTwoPositiveNumbers()
+        {
+            _uut.Multiply(2, 10);
+            Assert.That(_uut.Accumulator, Is.EqualTo(20));
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+        [Test]
+        public void ClearCheck_after_AddingTwoNegativeNumbers()
+        {
+            _uut.Add(-12, -15);
+            Assert.That(_uut.Accumulator, Is.EqualTo(-27));
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+        [Test]
+        public void ClearCheck_after_SubstractTwoPositiveNumbers()
+        {
+            _uut.Subtract(2, 10);
+            Assert.That(_uut.Accumulator, Is.EqualTo(-8));
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+        [Test]
         public void AddOverload_addTwoNumber_ThenAddOneNumber_Correctly()
         {
             Assert.That(_uut.Add(12, 50), Is.EqualTo(62));
@@ -134,7 +158,31 @@ namespace Calculator.Test.Unit
             _uut.Clear();
             Assert.That(_uut.Add(8), Is.EqualTo(8));
         }
+        [Test]
+        public void AddOverload_addTwoNumber_ThenAddOneNegativeNumber_Correctly()
+        {
+            Assert.That(_uut.Add(15, 30), Is.EqualTo(45));
+            Assert.That(_uut.Add(5), Is.EqualTo(50));
+        }
 
+        [Test]
+        public void SubstractOverload_SubstractTwoNumbers_ThenSubstractOneNumber_Correctly()
+        {
+            Assert.That(_uut.Subtract(50,5),Is.EqualTo(45));
+            Assert.That(_uut.Subtract(10),Is.EqualTo(35));
+        }
+        [Test]
+        public void SubstractOverload_SubstractTwoNumbers_ThenClear_ThenSubstractOneNumber_Correctly()
+        {
+            Assert.That(_uut.Subtract(50, 5), Is.EqualTo(45));
+            _uut.Clear();
+            Assert.That(_uut.Subtract(10), Is.EqualTo(-10));
+        }
+        [Test]
+        public void SubstractOverload_SubstractTwoNumbers_ThenSubstractOneNegativeNumber_Correctly()
+        {
+            Assert.That(_uut.Subtract(50, 5), Is.EqualTo(45));
+            Assert.That(_uut.Subtract(-10), Is.EqualTo(55));
         [Test]
         public void MultiplyOverload_TwoNumbers_Correctly()
         {
@@ -196,6 +244,6 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Power(-5, -2), Is.EqualTo(0.04));
             Assert.That(_uut.Power(-0.5), Is.EqualTo(5));
-        }
+
     }
 }

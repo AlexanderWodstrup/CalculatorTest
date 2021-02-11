@@ -79,9 +79,9 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Power_NegativeNumber_RaisedByPositivePower_Correctly()
+        public void Power_NegativeNumber_RaisedByNegativePower_Correctly()
         {
-            Assert.That(_uut.Power(-5, 2), Is.EqualTo(25));
+            Assert.That(_uut.Power(-5, -2), Is.EqualTo(0.04));
         }
 
         [Test]
@@ -89,11 +89,13 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Divide(4, 2), Is.EqualTo(2));
         }
+       
         [Test]
         public void Divide_TwoNumbers_OnePositive_OneNegative_Correctly()
         {
             Assert.That(_uut.Divide(-50, 4), Is.EqualTo(-12.5));
         }
+        
         [Test]
         public void Divide_TwoNegativeNumbers_Correctly()
         {
@@ -181,8 +183,67 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Subtract(50, 5), Is.EqualTo(45));
             Assert.That(_uut.Subtract(-10), Is.EqualTo(55));
+        [Test]
+        public void MultiplyOverload_TwoNumbers_Correctly()
+        {
+            Assert.That(_uut.Multiply(2, 10), Is.EqualTo(20));
+            Assert.That(_uut.Multiply(8), Is.EqualTo(160));
         }
 
+        [Test]
+        public void MultiplyOverload_TwoNegativeNumbers_Correctly()
+        {
+            Assert.That(_uut.Multiply(-2, -10), Is.EqualTo(20));
+            Assert.That(_uut.Multiply(8), Is.EqualTo(160));
+        }
+
+        [Test]
+        public void MultiplyOverload_TwoNumbers_OnePositive_OneNegative_Correctlyy()
+        {
+            Assert.That(_uut.Multiply(-2, 10), Is.EqualTo(-20));
+            Assert.That(_uut.Multiply(8), Is.EqualTo(-160));
+        }
+
+        [Test]
+        public void DivideOverload_TwoPositiveNumbers_Correctly()
+        {
+            Assert.That(_uut.Divide(4, 2), Is.EqualTo(2));
+            Assert.That(_uut.Divide(8), Is.EqualTo(0.25));
+        }
+
+        [Test]
+        public void DivideOverload_TwoNumbers_OnePositive_OneNegative_Correctly()
+        {
+            Assert.That(_uut.Divide(-50, 4), Is.EqualTo(-12.5));
+            Assert.That(_uut.Divide(2), Is.EqualTo(-6.25));
+        }
+
+        [Test]
+        public void DividOverloade_TwoNegativeNumbers_Correctly()
+        {
+            Assert.That(_uut.Divide(-4, -2), Is.EqualTo(2));
+            Assert.That(_uut.Divide(0.5), Is.EqualTo(4));
+        }
+
+        [Test]
+        public void PowerOverload_Correctly()
+        {
+            Assert.That(_uut.Power(5, 2), Is.EqualTo(25));
+            Assert.That(_uut.Power(2), Is.EqualTo(625));
+        }
+
+        [Test]
+        public void PowerOverload_NegativeExponent_Correctly()
+        {
+            Assert.That(_uut.Power(5, -2), Is.EqualTo(0.04));
+            Assert.That(_uut.Power(0.5), Is.EqualTo(0.2));
+        }
+
+        [Test]
+        public void PowerOverload_NegativeNumber_RaisedByNegativePower_Correctly()
+        {
+            Assert.That(_uut.Power(-5, -2), Is.EqualTo(0.04));
+            Assert.That(_uut.Power(-0.5), Is.EqualTo(5));
 
     }
 }

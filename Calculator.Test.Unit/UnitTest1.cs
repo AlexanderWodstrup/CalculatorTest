@@ -183,12 +183,6 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Subtract(-10), Is.EqualTo(55));
         }
 
-        [Test]
-        public void testPowerOverload()
-        {
-            Assert.That(_uut.Power(5,2),Is.EqualTo(25));
-            Assert.That(_uut.Accumulator, Is.EqualTo(25));
-            Assert.That(_uut.Power(2),Is.EqualTo(625));
-        }
+
     }
 }

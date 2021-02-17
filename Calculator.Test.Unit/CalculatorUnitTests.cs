@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Calculator.Test.Unit
 {
-    public class CalculatorTests
+    public class CalculatorUnitTests
     {
         private Calculator _uut;
         [SetUp]

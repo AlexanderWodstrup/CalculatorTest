@@ -20,4 +20,6 @@ namespace CalculatorTest
             Console.WriteLine($"Test af Power funktion, 4 ^ 2 = {uut.Power(4,2)}");
         }
     }
+
+    //Palle was here
 }

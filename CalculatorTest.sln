@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "CalculatorTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Test.Unit", "Calculator.Test.Unit\Calculator.Test.Unit.csproj", "{DC1BE897-057B-45C0-B552-60692BA4B017}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AD9B414F-132B-4C75-87FF-22AC6F877231}"
+	ProjectSection(SolutionItems) = preProject
+		dotCoverCoverageConfigCore.xml = dotCoverCoverageConfigCore.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
